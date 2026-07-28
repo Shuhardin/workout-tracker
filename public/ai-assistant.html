@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ-помощник</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <style>
+        .ai-container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .ai-container h1 { text-align: center; }
+        .ai-container .subtitle { text-align: center; color: #666; margin-bottom: 25px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .form-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+        .btn { width: 100%; padding: 12px; background: #4CAF50; color: #fff; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        .btn:hover { background: #388E3C; }
+        .result-box { margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px; display: none; }
+        .result-box .workout-card { padding: 10px 0; border-bottom: 1px solid #ddd; }
+        .result-box .workout-card:last-child { border-bottom: none; }
+        .result-box .workout-card .date { color: #666; font-size: 14px; }
+        .result-box .workout-card .exercises { margin-top: 5px; font-size: 14px; }
+        .result-box .workout-card .exercises span { display: inline-block; background: #e0e0e0; padding: 2px 8px; border-radius: 4px; margin: 2px; }
+        .save-btn { margin-top: 15px; background: #2196F3; }
+        .save-btn:hover { background: #1976D2; }
+        .msg { margin-top: 10px; font-weight: bold; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #4CAF50; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .error { color: #d32f2f; }
+        .success { color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <div class="ai-container">
+        <a href="/dashboard.html" class="back-link">← Назад к тренировкам</a>
+        <h1>🤖 ИИ‑помощник</h1>
+        <p class="subtitle">Выберите параметры → получите план на неделю</p>
+
+        <form id="aiForm">
+            <div class="form-group">
+                <label>Уровень</label>
+                <select id="level">
+                    <option value="1">Новичок</option>
+                    <option value="2" selected>Средний</option>
+                    <option value="3">Продвинутый</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Инвентарь</label>
+                <select id="equipment">
+                    <option value="дом">Дом</option>
+                    <option value="улица" selected>Улица</option>
+                    <option value="зал">Зал</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Цель</label>
+                <select id="goal">
+                    <option value="накачаться">Накачаться</option>
+                    <option value="похудеть" selected>Похудеть</option>
+                    <option value="поддержка">Поддержать форму</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Время (мин)</label>
+                <select id="duration">
+                    <option value="15">15</option>
+                    <option value="30" selected>30</option>
+                    <option value="45">45</option>
+                    <option value="60">60</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Тренировок в неделю</label>
+                <select id="frequency">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">🚀 Сгенерировать план</button>
+        </form>
+
+        <div id="result" class="result-box">
+            <h3>📋 Ваш план на неделю</h3>
+            <div id="workoutList"></div>
+            <button id="saveBtn" class="btn save-btn">💾 Сохранить всё</button>
+            <div id="msg" class="msg"></div>
+        </div>
+    </div>
+
+    <script src="ai-core.js"></script>
+    <script src="ai-assistant.js"></script>
+</body>
+</html>

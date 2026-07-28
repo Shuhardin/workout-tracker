@@ -1,0 +1,282 @@
+/* Общие стили для дашборда */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+.dashboard-header {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#usernameDisplay {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#logoutBtn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Форма добавления */
+.add-workout {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#workoutForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#workoutForm input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 150px;
+}
+
+#workoutForm button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Список тренировок */
+.workout-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.workout-item .info {
+    flex: 1;
+}
+
+.workout-item .title {
+    font-weight: bold;
+}
+
+.workout-item .date {
+    font-size: 14px;
+    color: #666;
+}
+
+.workout-item .description {
+    font-size: 14px;
+    color: #888;
+}
+
+.workout-item .status {
+    font-size: 13px;
+    margin-top: 4px;
+    color: #4CAF50;
+}
+
+.workout-item.completed .status {
+    color: #9E9E9E;
+}
+
+.workout-item.completed {
+    opacity: 0.7;
+    border-left: 4px solid #9E9E9E;
+}
+
+.workout-item .actions {
+    display: flex;
+    gap: 8px;
+}
+
+.workout-item .actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+}
+
+/* Сообщения */
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.message.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.message.error {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.loading {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+/*БЛОК УПРАЖНЕНИЙ*/
+.exercises-block {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.exercises-block label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.exercise-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+.exercise-item input {
+    flex: 1;
+    min-width: 60px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.exercise-item .ex-name {
+    flex: 2;
+    min-width: 100px;
+}
+
+.exercise-item .ex-sets,
+.exercise-item .ex-reps,
+.exercise-item .ex-weight {
+    max-width: 70px;
+}
+
+.exercise-item .remove-ex-btn {
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#addExerciseBtn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+#addExerciseBtn:hover {
+    background: #388E3C;
+}
+
+/*УПРАЖНЕНИЯ В КАРТОЧКЕ*/
+.workout-item .exercises-list {
+    margin: 6px 0 4px 0;
+    padding-left: 4px;
+}
+
+.workout-item .exercises-list .exercises-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.workout-item .exercises-list ol {
+    margin: 2px 0 0 18px;
+    padding: 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.workout-item .exercises-list ol li {
+    margin-bottom: 2px;
+}
+
+/* СТАТИСТИКА */
+.stats-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stats-section h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}

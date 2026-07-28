@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои тренировки</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>💪 Мои тренировки</h1>
+            <div class="user-info">
+                <span id="usernameDisplay"></span>
+                <button id="logoutBtn">Выйти</button>
+            </div>
+        </header>
+
+        <a href="/admin.html" id="adminLink" style="display:inline-block;margin:10px 0;
+        padding:8px 16px;background:#ff9800;color:#fff;border-radius:6px;
+        text-decoration:none;">👑 Админ</a>
+
+        <a href="/ai-assistant.html" style="display:inline-block; margin-top:10px;
+        padding:10px 20px; background:#9C27B0; color:white; border-radius:8px;
+        text-decoration:none; font-weight:bold;">🤖 ИИ-помощник</a>
+
+        <!-- Форма добавления -->
+        <section class="add-workout">
+            <h2>➕ Добавить тренировку</h2>
+            <form id="workoutForm">
+                <input type="text" id="workoutTitle" placeholder="Название" required>
+                <input type="date" id="workoutDate" required>
+                <input type="text" id="workoutDescription" placeholder="Описание (необязательно)">
+
+                <!-- Блок упражнений -->
+                <div class="exercises-block">
+                    <label>Упражнения:</label>
+                    <div id="exercisesContainer">
+                        <!-- Сюда будут добавляться строки упражнений -->
+                    </div>
+                    <button type="button" id="addExerciseBtn">➕ Добавить упражнение</button>
+                </div>
+
+                <button type="submit">Сохранить</button>
+            </form>
+            <div id="workoutMessage" class="message"></div>
+        </section>
+
+        <!-- Блок статистики -->
+        <section class="stats-section">
+            <h2>📊 Статистика</h2>
+            <div style="max-width: 300px; margin: 0 auto;">
+                <canvas id="statsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Список тренировок -->
+        <section class="workout-list">
+            <h2>📋 Список тренировок</h2>
+            <div id="workoutList">
+                <p class="loading">Загрузка...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

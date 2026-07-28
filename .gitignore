@@ -1,0 +1,26 @@
+# Зависимости
+node_modules/
+
+# База данных
+database.db
+*.db
+
+# Файлы окружения
+.env
+
+# Логи
+*.log
+npm-debug.log*
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Настройки IDE
+.vscode/
+.idea/
+
+# Сборка
+dist/
+build/

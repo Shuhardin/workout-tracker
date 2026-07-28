@@ -1,0 +1,112 @@
+/* Обнуляем стандартные отступы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;    /*Кнопки войти и регистрация в ряд*/
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;            /*Кнопки войти и регистрация растягиваются равномерно*/
+    padding: 10px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;       /*Плавное изменение цвета при наведении*/
+}
+
+.tab.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.tab:hover {
+    opacity: 0.9
+}
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #45a049;
+}
+
+.message {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.message.error {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.message.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
